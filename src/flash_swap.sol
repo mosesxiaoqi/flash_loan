@@ -7,7 +7,7 @@ import {IUniswapV2Pair} from "@uniswapv2-solc0.8/contracts/interfaces/IUniswapV2
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "./libraries/UniswapV2Library.sol";
 
-contract FlashSwap {
+contract FlashSwap is IUniswapV2Callee, Ownable {
     address public owner;
     // uniswap v2 factory address
     address immutable factory1;
